@@ -5,10 +5,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="3138259b-3815-49e6-94c7-24861d74cdfe" basePath="/timezone" >
-		<http:listener-connection host="0.0.0.0" port="8082" />
+		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="f06a602f-0149-4e94-ae89-8674d5f35d3f" basePath="/api/timezone" >
-		<http:request-connection host="worldtimeapi.org" />
+		<http:request-connection host="worldtimeapi.org" port="80"/>
 	</http:request-config>
 	<flow name="world-demo-apiFlow" doc:id="67814303-d3a0-4960-b630-72e7d44030e6" >
 		<http:listener doc:name="Listener" doc:id="def143dd-4227-43ad-91ba-f78096d7cb6d" config-ref="HTTP_Listener_config" path="/{region}/{city}"/>
